@@ -7,9 +7,10 @@ public class DeluxePizza extends Pizza {
         // your code goes here
 
 
-           super.addExtraCheese();
-           super.addExtraToppings();
-           super.getBill();
+           addExtraCheese();
+           addExtraToppings();
+
+
 
     }
 }
