@@ -43,7 +43,7 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        this.et=true;
+        
         if(this.et==true&&this.isVeg==true) {
             this.et=true;
             this.price += 70;
