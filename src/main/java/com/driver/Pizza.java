@@ -3,12 +3,16 @@ package com.driver;
 public class Pizza {
 
     private int price;
+    private int cp;
+    private int tp;
+    private int tap;
     private Boolean isVeg;
     private String bill;
-    private boolean ec=false;
-    private boolean et=false;
-    private boolean cb=false;
-    private boolean bg=false;
+    private boolean ec;
+    private boolean et;
+    private boolean cb;
+
+    private boolean bg;
 
 
     public Pizza(Boolean isVeg){
@@ -16,12 +20,20 @@ public class Pizza {
         // your code goes here
         if(this.isVeg) {
             this.price = 300;
-
+           this.cp=80;
+           this.tp=70;
         }
         else {
             this.price = 400;
+            this.cp=80;
+            this.tp=120;
 
         }
+        this.ec=false;
+        this.et=false;
+        this.cb=false;
+
+        this.bill="Base Price Of The Pizza: "+this.price+"\n";
 
     }
 
@@ -32,9 +44,9 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
 
-        if(this.ec==false) {
-            this.ec=true;
-            this.price+=80;
+        if(ec==false) {
+            ec=true;
+            this.price+=this.cp;
         }
 
 
@@ -43,15 +55,11 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        
-        if(this.et==true&&this.isVeg==true) {
-            this.et=true;
-            this.price += 70;
-        }
-        else if(this.et==true&&this.isVeg==false) {
-            this.et=true;
-            this.price += 120;
-        }
+
+       if(et==false){
+           this.price+=this.tp;
+           et=true;
+       }
 
     }
 
@@ -70,17 +78,10 @@ public class Pizza {
         // your code goes here
 
         if(this.bg==false) {
-            if(this.isVeg) {
 
-                System.out.println("Base Price Of The Pizza: 300");
-            }
-            else {
-
-                System.out.println("Base Price Of The Pizza: 400");
-            }
 
             if (this.ec) {
-                this.bill = "Extra Cheese Added: 80" + "\n";
+                this.bill += "Extra Cheese Added: 80" + "\n";
 
             }
             if (this.et == true && this.isVeg == true) {
